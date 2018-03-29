@@ -1,0 +1,19 @@
+ul {
+    padding: 0 30px;
+    user-select: none;
+    li {
+        float: left;
+        color: #1b82d7;
+        width: 20%;
+        padding: 10px 0;
+        &:hover {
+            color: #229be0;
+        }
+        span {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

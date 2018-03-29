@@ -1,0 +1,83 @@
+<div class="content-section introduction">
+    <h1>常用技巧</h1>
+</div>
+<div class="box">
+    <h3>快捷 console.log</h3>
+    <hr>
+    <br>
+    <div>
+        let log = console.log.bind(console); log(xxx);
+    </div>
+    <br>
+    <h3>peomise 用来处理异步</h3>
+    <hr>
+    <br>
+    <div>
+        <h4>Promise的含义：</h4>
+        <br>
+        <p>所谓Promise，就是一个对象，用来传递异步操作的消息。</p>
+        <br>
+        <p>Promise对象有以下两个特点：</p>
+        <ul>
+            <li>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：Pending（进行中）、 <br> Resolved（已完成，又称Fulfilled）和Rejected（已失败）。 <br> 只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。
+            </li>
+            <li>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从Pending变为Resolved和从Pending变为Rejected。 <br> 只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。就算改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。 <br> 这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。
+            </li>
+        </ul>
+        <p>有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。 <br> 此外，Promise对象提供统一的接口，使得控制异步操作更加容易。
+        </p>
+        <br>
+        <p>Promise也有一些缺点：</p>
+        <ul>
+            <li>首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。</li>
+            <li>其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。</li>
+            <li>第三，当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</li>
+        </ul>
+        <strong>更多访问：</strong> <a class="demoHref" href="https://github.com/wangraoji/lw-jsdoc/tree/master/peomise" target="_blank">github</a>
+    </div>
+    <br>
+    <h3>简单的倒计时</h3>
+    <hr>
+    <br>
+    <div>
+        <pre>
+          {{ countdown }}
+       </pre>
+    </div>
+    <br>
+    <h3>时间戳转换</h3>
+    <hr>
+    <br>
+    <div>
+        <p>我们一般从后台获取到的是：/Date(1483286400000)/</p> <br>
+        <p>下面有2种方法解决：</p> <br>
+        <pre>
+          {{ timeStamp }}
+        </pre>
+    </div>
+    <br>
+    <h3>ES6 快速入门</h3>
+    <hr>
+    <br>
+    <strong>传送门：</strong><a class="demoHref" href="https://github.com/wangraoji/lw-jsdoc/tree/master/es6" target="_blank">buibuibui!!!</a>
+    <br>
+    <br>
+    <h3>linux 服务器基本使用</h3>
+    <hr>
+    <br>
+    <strong>传送门：</strong><a class="demoHref" href="https://github.com/wangraoji/lw-jsdoc/tree/master/server" target="_blank">buibuibui!!!</a>
+    <br>
+    <br>
+    <h3>HTML 特殊字符</h3>
+    <hr>
+    <br>
+    <strong>传送门：</strong><a class="demoHref" href="http://www.cnblogs.com/web-d/archive/2010/04/16/1713298.html" target="_blank">buibuibui!!!</a>
+    <br>
+    <br>
+    <h3>如何支持开发人员？</h3>
+    <hr>
+    <ul>
+        <li>可以关注我们的：<a class="demoHref" href="https://github.com/wangraoji/lw-jsdoc" target="_blank">Github</a></li>
+        <li>创建拉请求，提交错误，建议新功能</li>
+    </ul>
+</div>
