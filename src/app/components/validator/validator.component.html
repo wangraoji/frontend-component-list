@@ -1,0 +1,83 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g-2"></div>
+        <div class="ui-g-8" style="text-align: center;">表单验证</div>
+        <div class="ui-g-2"></div>
+    </div>
+    <div class="ui-g-12">
+        <div class="ui-g-2"></div>
+        <div class="ui-g-8" style="text-align: center;">
+            <form [formGroup]="myForm" (ngSubmit)="postDate()">
+                <div class="ui-g-12">
+                    <div class="ui-g-4" style="text-align: right;">
+                        <label for="username">用户名:</label>
+                    </div>
+                    <div class="ui-g-8" style="text-align: left;">
+                        <input type="text" placeholder="请输入用户名" class="form-control" id="username" formControlName="username" />
+                        <div [hidden]="myForm.get('username').valid || myForm.get('username').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                            <p [hidden]="!myForm.hasError('required','username')">用户名必填的</p>
+                            <p [hidden]="!myForm.hasError('minlength','username')">用户名长度过短</p>
+                            <p [hidden]="!myForm.hasError('maxlength','username')">用户名长度太长</p>
+                        </div>
+                    </div>
+                </div>
+                <ng-container formGroupName="password">
+                    <div class="ui-g-12">
+                        <div class="ui-g-4" style="text-align: right;">
+                            <label for="pass1">密码:</label>
+                        </div>
+                        <div class="ui-g-8" style="text-align: left;">
+                            <input type="password" class="form-control" placeholder="请输入密码" id="pass1" formControlName="pass1" />
+                            <div [hidden]="myForm.get('password').get('pass1').valid || myForm.get('password').get('pass1').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                <p [hidden]="!myForm.get('password').hasError('required','pass1')">密码是必填的</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-g-4" style="text-align: right;">
+                            <label for="pass2">确认密码:</label>
+                        </div>
+                        <div class="ui-g-8" style="text-align: left;">
+                            <input type="password" class="form-control" placeholder="请再次输入密码" id="pass2" formControlName="pass2" />
+                            <div [hidden]="myForm.get('password').get('pass2').valid || myForm.get('password').get('pass2').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                <p [hidden]="!myForm.get('password').hasError('required','pass2')">确认密码是必填的</p>
+                                <p [hidden]="!myForm.hasError('passValidator','password') || myForm.get('password').hasError('required','pass2')">{{myForm.getError('passValidator','password')?.info}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="ui-g-12">
+                    <div class="ui-g-4" style="text-align: right;">
+                        <label for="mobile">手机号码:</label>
+                    </div>
+                    <div class="ui-g-8" style="text-align: left;">
+                        <input type="text" placeholder="请输入手机号码" class="form-control" id="mobile" formControlName="mobile" />
+                        <div [hidden]="myForm.get('mobile').valid || myForm.get('mobile').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                            <p [hidden]="!myForm.hasError('required','mobile')">手机是必填的</p>
+                            <p [hidden]="!myForm.hasError('mobileValidator', 'mobile') || myForm.hasError('required','mobile')">{{myForm.getError('mobileValidator', 'mobile')?.info}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-g-4" style="text-align: right;">
+                        <label for="email">邮箱:</label>
+                    </div>
+                    <div class="ui-g-8" style="text-align: left;">
+                        <input type="text" placeholder="请输入邮箱" class="form-control" id="email" formControlName="email" />
+                        <div [hidden]="myForm.get('email').valid || myForm.get('email').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                            <p [hidden]="!myForm.hasError('required','email')">邮箱是必填的</p>
+                            <p [hidden]="!myForm.hasError('email', 'email') || myForm.hasError('required','email')">邮箱格式不对</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <input type="submit" value="提交" class="btn btn-warning" [disabled]="!myForm.valid" />
+                </div>
+            </form>
+        </div>
+        <div class="ui-g-2"></div>
+    </div>
+    <div class="ui-g-12">
+        发送的值：{{ str }}
+    </div>
+</div>

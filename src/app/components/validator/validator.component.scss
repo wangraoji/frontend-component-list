@@ -1,0 +1,13 @@
+
+.ng-touched:not(form),.ng-invalid:not(form) {
+    border: 1px solid #f00;
+    outline: none;
+}
+
+.ng-valid:not(form),.ng-untouched:not(form) {
+    border: 1px solid #ddd;
+    outline: none;
+}
+p{
+    color:#f00;
+}

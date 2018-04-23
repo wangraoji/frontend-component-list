@@ -9,12 +9,13 @@ export class CommonService {
 
     getHeadDatas(): Promise<any> {
         return new Promise((resolve, reject) => {
-            if (environment.production) {
+            if (!environment.production) {
                 let data = {
                     headDatas: [
                         { title: "工作流程", parameter: "workProcess" },
                         { title: "常用技巧", parameter: "commonTechniques" },
                         { title: "angular2Doc", parameter: "angular2Doc" },
+                        { title: "loadsh", parameter: "loadsh", outLink: "https://www.lodashjs.com/docs/4.17.5.html" },
                     ]
                 };
                 resolve(data)
@@ -27,7 +28,7 @@ export class CommonService {
     }
     getData(parameter): Promise<any> {
         return new Promise((resolve, reject) => {
-            if (environment.production) {
+            if (!environment.production) {
                 let data = {
                     contData: [
                         { path: "workProcess" },

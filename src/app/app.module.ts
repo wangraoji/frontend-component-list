@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 
@@ -18,7 +18,7 @@ import { CommonDocComponent } from './components/commonDoc/commonDoc.component';
 import { TechniquesComponent } from './components/commonDoc/components/techniques/techniques.component';
 import { WorkProcessComponent } from './components/commonDoc/components/work-process/work-process.component';
 import { Angular2DocComponent } from './components/commonDoc/components/angular2-doc/angular2-doc.component';
-
+import { ValidatorComponent } from './components/validator/validator.component';
 
 @NgModule({
   declarations: [
@@ -32,15 +32,17 @@ import { Angular2DocComponent } from './components/commonDoc/components/angular2
     CommonDocComponent,
     TechniquesComponent,
     WorkProcessComponent,
-    Angular2DocComponent
+    Angular2DocComponent,
+    ValidatorComponent
   ],
   imports: [
     BrowserModule,
     // FormsModule,
+    FormsModule, ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routes, { useHash: true }),
   ],
-  providers: [ CommonService ],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,7 +18,12 @@ export class CommonDocComponent implements OnInit {
   }
 
   headClick(e: any) {
-    this.getData(e.parameter)
+    if(e.outLink){
+      window.open(e.outLink);
+    }else {
+      this.getData(e.parameter)
+    }
+
   }
 
   getData(parameter) {
