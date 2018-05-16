@@ -5,9 +5,17 @@
     <div class="layout-sidebar">
         <div class="layout-menu">
             <ng-container *ngFor="let cell of layoutMenuData">
-                <a [routerLink]="cell.href" routerLinkActive="active">
-                    <span><i [ngClass]="cell.icon" aria-hidden="true"></i>&nbsp; {{ cell.title }}</span>
-                </a>
+                <ng-container *ngIf="cell.link">
+                    <a [href]="cell.href" target="_blank">
+                        <span><i [ngClass]="cell.icon" aria-hidden="true"></i>&nbsp; {{ cell.title }}</span>
+                    </a>
+                </ng-container>
+                <ng-container *ngIf="!cell.link">
+                    <a [routerLink]="cell.href" routerLinkActive="active">
+                        <span><i [ngClass]="cell.icon" aria-hidden="true"></i>&nbsp; {{ cell.title }}</span>
+                    </a>
+                </ng-container>
+
             </ng-container>
         </div>
     </div>

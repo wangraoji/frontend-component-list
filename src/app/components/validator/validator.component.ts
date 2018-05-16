@@ -4,11 +4,11 @@ import { mobileValidator, passValidator } from './validatorLib';
 @Component({
     selector: 'validator',
     templateUrl: './validator.component.html',
-    styleUrls:['./validator.component.scss']
+    styleUrls: ['./validator.component.scss']
 })
 export class ValidatorComponent {
     private myForm: FormGroup;
-    str:any;
+    str: any;
     constructor(private fb: FormBuilder) {
         this.createForm();
     }
@@ -32,12 +32,14 @@ export class ValidatorComponent {
     // 提交表单函数
     postDate() {
         /**
-         * valid:是否有效
+         * valid:是否有效 
          * invalid:无效
          * dirty:脏
          * status:状态
          * errors:显示错误
          */
+        // console.log(this.myForm);
+        
         if (this.myForm.valid) {
             console.log(this.myForm.value);
             this.str = JSON.stringify(this.myForm.value);

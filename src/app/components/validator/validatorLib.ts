@@ -17,4 +17,4 @@ export function passValidator(controlGroup: FormGroup): any {
     const pass2 = controlGroup.get('pass2').value as FormControl;
     const isEqule: boolean = (pass1 === pass2);
     return isEqule ? null : { passValidator: { info: '两次密码不一致' } };
-}
+}  
