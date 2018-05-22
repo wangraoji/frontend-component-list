@@ -7,7 +7,7 @@ import { mobileValidator, passValidator } from './validatorLib';
     styleUrls: ['./validator.component.scss']
 })
 export class ValidatorComponent {
-    private myForm: FormGroup;
+    public myForm: FormGroup;
     str: any;
     constructor(private fb: FormBuilder) {
         this.createForm();
@@ -19,12 +19,6 @@ export class ValidatorComponent {
     createForm() {
         this.myForm = this.fb.group({
             username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(6)]],
-            mobile: ['', [Validators.required, mobileValidator]],
-            email: ["", [Validators.required, Validators.email]],
-            password: this.fb.group({
-                pass1: ['', [Validators.required]],
-                pass2: ['', [Validators.required]]
-            }, { validator: passValidator })
         });
 
     }

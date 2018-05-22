@@ -74,10 +74,6 @@ export const ROUTES = [{
             ],
         },
         {
-            path: 'PVM_A1',
-            component: Pvma1Component,
-        },
-        {
             path: 'pvmc',
             component: PvmcComponent,
         },
