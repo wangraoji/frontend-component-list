@@ -1,0 +1,9 @@
+<p-tree [value]="filesTree" [selectionMode]="treeData.selectionMode" [(selection)]="selectedTreeNode" (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)">
+</p-tree>
+
+<ng-container *ngIf="treeData.selectionMode=='single'">
+    <div style="margin-top:8px">Selected Node: {{selectedTreeNode ? selectedTreeNode.label : 'none'}}</div>
+</ng-container>
+<ng-container *ngIf="treeData.selectionMode !=='single'">
+    <div>选中 节点: <span *ngFor="let file of selectedTreeNode">{{file.label}} </span></div>
+</ng-container>

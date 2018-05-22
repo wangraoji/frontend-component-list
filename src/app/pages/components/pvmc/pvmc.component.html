@@ -1,0 +1,165 @@
+<div class="content-section introduction">
+    <h1>
+        PVMC的创建与PVM的使用说明
+    </h1>
+</div>
+
+<div class="content-section implementation">
+    <h3 style="margin-bottom:10px;">PVMC的创建（图片双击放大）</h3>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            1. 创建菜单
+        </p-header>
+        <p>创建一个菜单，配置路径（这里我就不说了，配置菜单配置路径大家都知道了）。</p>
+        <p>这里我以shengchanshiti2（实体名）/50f36042-b3a2-8758-1e29-69a2d0811eef（菜单uid）为例！</p>
+    </p-panel>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            2. 创建PVMC(这里我以列表界面为例)
+        </p-header>
+        <p>像这样：（路径你们可以随便放，不一定要按我的）</p>
+        <img src="assets/pvmcDemo/demo1.png" (dblclick)="fd('assets/pvmcDemo/demo1.png')">
+    </p-panel>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            3. 在 testPvmcList1.conponent.ts 写部分程序（为什么写部分，先得通过菜单点进来）
+        </p-header>
+        <div class="ui-g">
+            <div class="ui-g-6">
+                <p>1.</p>
+                <img src="assets/pvmcDemo/2.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/2.png')">
+            </div>
+            <div class="ui-g-6">
+                <p>2.</p>
+                <img src="assets/pvmcDemo/3.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/3.png')">
+            </div>
+        </div>
+    </p-panel>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            4. 导出pvmc
+        </p-header>
+        <p>到了这里，我们就能通过菜单点进来了吗？NO，还不行，我们还需要配置下路由。</p>
+        <p>配置路由前我们得先把文件导出去。</p>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="ui-g-6">
+                    <p>1.</p>
+                    <img src="assets/pvmcDemo/4.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/4.png')">
+                </div>
+                <div class="ui-g-6">
+                    <p>2.</p>
+                    <img src="assets/pvmcDemo/4-1.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/4-1.png')">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-6">
+                    <p>3.</p>
+                    <img src="assets/pvmcDemo/4-2.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/4-2.png')">
+                </div>
+                <div class="ui-g-6">
+                    <p>4.</p>
+                    <img src="assets/pvmcDemo/4-3.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/4-3.png')">
+                </div>
+            </div>
+        </div>
+    </p-panel>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            5. 配置路由
+        </p-header>
+        <p>我这里已pages路由为例，最终菜单配置好应该是：</p>
+        <p>http://localhost:4200/#/pages/testPvmcList1/shengchanshiti2/50f36042-b3a2-8758-1e29-69a2d0811eef</p>
+        <p>其他目录下在对应的路由配置里配置。我就不演示了。</p>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="ui-g-6">
+                    <p>1.</p>
+                    <img src="assets/pvmcDemo/5-1.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/5-1.png')">
+                </div>
+                <div class="ui-g-6">
+                    <p>2.</p>
+                    <img src="assets/pvmcDemo/5-2.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/5-2.png')">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-6">
+                    <p>3.</p>
+                    <img src="assets/pvmcDemo/5-3.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/5-3.png')">
+                </div>
+                <div class="ui-g-6">
+                    <p>4.</p>
+                    <img src="assets/pvmcDemo/5-4.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/5-4.png')">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <p>5.效果如下：(配置好路由我们就可以写代码了)</p>
+                <img src="assets/pvmcDemo/5-5.png" (dblclick)="fd('assets/pvmcDemo/5-5.png')">
+            </div>
+        </div>
+    </p-panel>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            6. 使用PVM
+        </p-header>
+        <p>到了这里我们就可以开始使用PVM了！</p>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="ui-g-6">
+                    <p>1.</p>
+                    <img src="assets/pvmcDemo/6-1.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/6-1.png')">
+                </div>
+                <div class="ui-g-6">
+                    <p>2.</p>
+                    <img src="assets/pvmcDemo/6-2.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/6-2.png')">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <p>效果如下：</p>
+                <img src="assets/pvmcDemo/6-3.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/6-3.png')">
+            </div>
+        </div>
+    </p-panel>
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            7. 使用PVM教程
+        </p-header>
+        <p>到了这里就结束了吗？还没有，我们仅知道PVM怎么调用，还不知道里面方法怎么用！</p>
+        <p>点击这里进入 <a style="color:blue" href="./pages/pvmList" target="_blank">pvmList文档</a>，里面有个每个pvm 导出的事件以及内容。 </p>
+        <p>到这里，我假设你已经看完了，那么我们就开始用它。</p>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="ui-g-6">
+                    <p>1.</p>
+                    <img src="assets/pvmcDemo/7-1.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/7-1.png')">
+                </div>
+                <div class="ui-g-6">
+                    <p>2.</p>
+                    <img src="assets/pvmcDemo/7-2.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/7-2.png')">
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <p>3.因为该列表是调用服务端分页，所以分页事件会先执行一次，默认0,10(你在ts里传进去的图6-1)表示0页10条</p>
+                <p>&nbsp;&nbsp;&nbsp;当后面点到2的时候，变成10,10。点到第3页会变成20,10，到第4页就是30,10，到这里规律出来了！</p>
+                <p>&nbsp;&nbsp;&nbsp;当前点击页 = 参数一 / 参数二 + 1；例如首页 0 / 10 + 1 = 1； 20 / 10 + 1 = 2 ...</p>
+                <p>&nbsp;&nbsp;&nbsp;得到点击页数就可以做你逻辑代码了！</p>
+                <p>&nbsp;&nbsp;&nbsp;取消选中是没有任何返回，直接写你逻辑代码..,</p>
+                &nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/pvmcDemo/7-3.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/7-3.png')">
+            </div>
+            <div class="ui-g-12">
+                <p>4.到这里我们还是不是还有个到处两个标签？不废话，见下图：</p>
+                <img src="assets/pvmcDemo/7-4.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/7-4.png')">
+            </div>
+            <div class="ui-g-12">
+                <p>5.效果如下，到这里我们教程结束！（如有遇问题，关注pvmList文档，以及询问前端）</p>
+                <img src="assets/pvmcDemo/7-5.png" style="width:100%" (dblclick)="fd('assets/pvmcDemo/7-5.png')">
+            </div>
+        </div>
+    </p-panel>
+</div>
+
+<p-dialog header="图片放大" [(visible)]="display">
+    <div style="height:500px;overflow:auto">
+        <img [src]="fdStr">
+    </div>
+</p-dialog>

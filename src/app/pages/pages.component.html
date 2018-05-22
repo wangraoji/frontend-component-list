@@ -1,0 +1,30 @@
+<div class="layout-wrapper">
+    <div class="layout-topbar">
+        <div class="leeLogo"></div>
+    </div>
+    <div class="layout-sidebar">
+        <div class="layout-menu">
+            <ng-container *ngFor="let cell of layoutMenuData">
+                <ng-container *ngIf="cell.link">
+                    <a [href]="cell.href" target="_blank">
+                        <span><i [ngClass]="cell.icon" aria-hidden="true"></i>&nbsp; {{ cell.title }}</span>
+                    </a>
+                </ng-container>
+                <ng-container *ngIf="!cell.link">
+                    <a [routerLink]="cell.href" routerLinkActive="active">
+                        <span><i [ngClass]="cell.icon" aria-hidden="true"></i>&nbsp; {{ cell.title }}</span>
+                    </a>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <div class="layout-content">
+        <router-outlet></router-outlet>
+        <div class="layout-footer">
+            <span>Copyright © 2018</span>
+            <a href="https://github.com/wangraoji" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        </div>
+    </div>
+</div>

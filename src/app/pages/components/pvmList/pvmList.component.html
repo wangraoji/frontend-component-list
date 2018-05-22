@@ -1,0 +1,51 @@
+<div class="content-section introduction">
+    <h1>
+        pvmList 文档
+    </h1>
+</div>
+
+<div class="content-section implementation">
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
+            列表模板1 --> list1
+        </p-header>
+        <p>事件：</p>
+        <p-table [value]="list1Data.event">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>事件名</th>
+                    <th>返回值</th>
+                    <th>描述</th>
+                    <th>使用方法</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-list1>
+                <tr>
+                    <td>{{list1.eventName}}</td>
+                    <td>{{list1.returns}}</td>
+                    <td>{{list1.dec}}</td>
+                    <td>{{list1.func}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <br>
+        <p>内容：</p>
+        <p-table [value]="list1Data.cont">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>内容标签</th>
+                    <th>描述</th>
+                    <th>使用方法</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-list1>
+                <tr>
+                    <td>{{list1.contName}}</td>
+                    <td>{{list1.contDec}}</td>
+                    <td [innerHTML]="list1.contfunc"></td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-panel>
+
+</div>

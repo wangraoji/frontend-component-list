@@ -1,0 +1,18 @@
+<div>
+    <ul>
+        <li *ngFor="let cell of headDatas">
+            <ng-container *ngIf="cell.outLink">
+                <a [href]="cell.outLink" target="_blank">
+                    <span>{{ cell.title }}</span>
+                </a>
+            </ng-container>
+            <ng-container *ngIf="!cell.outLink">
+                <a [routerLink]="cell.parameter" routerLinkActive="active">
+                    <span>{{ cell.title }}</span>
+                </a>
+            </ng-container>
+        </li>
+    </ul>
+    <br clear="both" />
+</div>
+<router-outlet></router-outlet>

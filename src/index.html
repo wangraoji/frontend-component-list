@@ -1,59 +1,14 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Lee</title>
-    <base href="/">
+  <meta charset="utf-8">
+  <title>frontend-component-list</title>
+  <base href="/">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        .dotting {
-            display: inline-block;
-            min-width: 2px;
-            min-height: 2px;
-            box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor;
-            /* for IE9+, ..., 3个点 */
-            animation: dot 4s infinite step-start both;
-            /* for IE10+, ... */
-        }
-        
-        .dotting:before {
-            content: '...';
-        }
-        /* for IE8. 若无需兼容IE8, 此行以及下一行删除*/
-        
-        .dotting::before {
-            content: '';
-        }
-        /* for IE9+ 覆盖 IE8 */
-        
-         :root .dotting {
-            margin-right: 8px;
-        }
-        /* for IE9+,FF,CH,OP,SF 占据空间*/
-        
-        @keyframes dot {
-            25% {
-                box-shadow: none;
-            }
-            /* 0个点 */
-            50% {
-                box-shadow: 2px 0 currentColor;
-            }
-            /* 1个点 */
-            75% {
-                box-shadow: 2px 0 currentColor, 6px 0 currentColor;
-                /* 2个点 */
-            }
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
-    <app-root>
-        <span>loading</span><span class="dotting"></span>
-    </app-root>
+  <app-root></app-root>
 </body>
 </html>

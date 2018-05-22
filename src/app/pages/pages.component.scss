@@ -1,0 +1,107 @@
+.layout-wrapper {
+    .layout-topbar {
+        background-color: #20272a;
+        display: block;
+        padding: 0;
+        height: 70px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9997;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+        .leeLogo {
+            width: 200px;
+            height: 136px;
+            background: url('../../assets/lee.png');
+            background-size: cover;
+            position: absolute;
+            top: -66px;
+            left: 50px;
+        }
+    }
+    .layout-sidebar {
+        position: fixed;
+        left: 0;
+        top: 70px;
+        height: calc(100% - 70px);
+        background-color: #fff;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 300px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+        .layout-menu {
+            overflow-y: auto;
+            width: 300px;
+            a {
+                width: 100%;
+                height: 50px;
+                display: block;
+                padding: 15px 0px 0px 25px;
+                border-top: solid 1px #e3e9ea;
+                box-sizing: border-box;
+                &:hover {
+                    background-color: #eeeeee;
+                    transition: all 0.5s ease;
+                }
+                span {
+                    color: #84939f;
+                }
+                &.active {
+                    span {
+                        color: #1b82d7;
+                    }
+                }
+            }
+        }
+    }
+    .layout-content {
+        margin-left: 300px;
+        padding-top: 70px;
+        background-color: #fff;
+        .layout-footer {
+            font-size: 14px;
+            color: #84939f;
+            border-bottom: solid 1px #dde3e6;
+            padding: 30px;
+            overflow: hidden;
+            background-color: #f5f7f8;
+            a {
+                float: right;
+                color: #84939f;
+            }
+        }
+    }
+}
+
+:host /deep/ {
+    .content-section {
+        display: block;
+        border-bottom: solid 1px #dde3e6;
+        padding: 30px;
+        overflow: hidden;
+        background-color: #f5f7f8;
+        &.introduction {
+            background-image: linear-gradient(to left, #2bc0ec, #1b81d7);
+            color: #ffffff;
+        }
+    }
+
+    .box {
+        padding: 20px;
+        .demoHref {
+            color: #0366d6;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        h3 {
+            margin-bottom: 5px;
+        }
+        ul {
+            padding: 20px;
+        }
+    }
+}
