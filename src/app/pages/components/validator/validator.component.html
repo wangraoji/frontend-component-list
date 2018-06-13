@@ -1,90 +1,235 @@
-<div class="ui-g">
-    <div class="ui-g-12">
-        <div class="ui-g-2"></div>
-        <div class="ui-g-8" style="text-align: center;">表单验证</div>
-        <div class="ui-g-2"></div>
-    </div>
-    <div class="ui-g-12">
-        <div class="ui-g-2"></div>
-        <div class="ui-g-8" style="text-align: center;">
-            <form [formGroup]="myForm" (ngSubmit)="postDate()">
-                <div class="ui-g-12">
-                    <div class="ui-g-4" style="text-align: right;">
-                        <label for="username">用户名:</label>
-                    </div>
-                    <div class="ui-g-8" style="text-align: left;">
-                        <input type="text" placeholder="请输入用户名" class="form-control" id="username" formControlName="username" />
-                        <div [hidden]="myForm.get('username').valid || myForm.get('username').untouched" style="text-align:left;display:inline-block;margin-left:10px">
-                            <p [hidden]="!myForm.hasError('required',['username'])">用户名必填的</p>
-                            <p [hidden]="!myForm.hasError('minlength',['username'])">用户名长度过短</p>
-                            <p [hidden]="!myForm.hasError('maxlength',['username'])">用户名长度太长</p>
-                        </div>
-                    </div>
-                </div>
-                <ng-container formGroupName="password">
+<div class="content-section introduction">
+    <h1>
+        表单and录入验证
+    </h1>
+</div>
+<div class="content-section implementation">
+    <!-- <h3>表单验证</h3>
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <div class="ui-g-8" style="text-align: center;">
+                <form [formGroup]="myForm" (ngSubmit)="postDate()">
                     <div class="ui-g-12">
                         <div class="ui-g-4" style="text-align: right;">
-                            <label for="pass1">密码:</label>
+                            <label for="username">用户名:</label>
                         </div>
                         <div class="ui-g-8" style="text-align: left;">
-                            <input type="password" class="form-control" placeholder="请输入密码" id="pass1" formControlName="pass1" />
-                            <div [hidden]="myForm.get(['password']).get('pass1').valid || myForm.get(['password']).get('pass1').untouched" style="text-align:left;display:inline-block;margin-left:10px">
-                                <p [hidden]="!myForm.get(['password']).hasError('required',['pass1'])">密码是必填的</p>
+                            <input type="text" placeholder="请输入用户名" class="form-control" id="username" formControlName="username" />
+                            <div [hidden]="myForm.get('username').valid || myForm.get('username').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                <p [hidden]="!myForm.hasError('required',['username'])">用户名必填的</p>
+                                <p [hidden]="!myForm.hasError('minlength',['username'])">用户名长度过短</p>
+                                <p [hidden]="!myForm.hasError('maxlength',['username'])">用户名长度太长</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ng-container formGroupName="password">
+                        <div class="ui-g-12">
+                            <div class="ui-g-4" style="text-align: right;">
+                                <label for="pass1">密码:</label>
+                            </div>
+                            <div class="ui-g-8" style="text-align: left;">
+                                <input type="password" class="form-control" placeholder="请输入密码" id="pass1" formControlName="pass1" />
+                                <div [hidden]="myForm.get(['password']).get('pass1').valid || myForm.get(['password']).get('pass1').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                    <p [hidden]="!myForm.get(['password']).hasError('required',['pass1'])">密码是必填的</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-g-12">
+                            <div class="ui-g-4" style="text-align: right;">
+                                <label for="pass2">确认密码:</label>
+                            </div>
+                            <div class="ui-g-8" style="text-align: left;">
+                                <input type="password" class="form-control" placeholder="请再次输入密码" id="pass2" formControlName="pass2" />
+                                <div [hidden]="myForm.get(['password']).get('pass2').valid || myForm.get(['password']).get('pass2').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                    <p [hidden]="!myForm.get(['password']).hasError('required',['pass2'])">确认密码是必填的</p>
+                                    <p [hidden]="!myForm.hasError('passValidator',['password']) || myForm.get(['password']).hasError('required',['pass2'])">{{myForm.getError('passValidator',['password'])?.info}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <div class="ui-g-12">
+                        <div class="ui-g-4" style="text-align: right;">
+                            <label for="mobile">手机号码:</label>
+                        </div>
+                        <div class="ui-g-8" style="text-align: left;">
+                            <input type="text" placeholder="请输入手机号码" class="form-control" id="mobile" formControlName="mobile" />
+                            <div [hidden]="myForm.get('mobile').valid || myForm.get('mobile').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                <p [hidden]="!myForm.hasError('required',['mobile'])">手机是必填的</p>
+                                <p [hidden]="!myForm.hasError('mobileValidator', ['mobile']) || myForm.hasError('required',['mobile'])">{{myForm.getError('mobileValidator', ['mobile'])?.info}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="ui-g-12">
                         <div class="ui-g-4" style="text-align: right;">
-                            <label for="pass2">确认密码:</label>
+                            <label for="email">邮箱:</label>
                         </div>
                         <div class="ui-g-8" style="text-align: left;">
-                            <input type="password" class="form-control" placeholder="请再次输入密码" id="pass2" formControlName="pass2" />
-                            <div [hidden]="myForm.get(['password']).get('pass2').valid || myForm.get(['password']).get('pass2').untouched" style="text-align:left;display:inline-block;margin-left:10px">
-                                <p [hidden]="!myForm.get(['password']).hasError('required',['pass2'])">确认密码是必填的</p>
-                                <p [hidden]="!myForm.hasError('passValidator',['password']) || myForm.get(['password']).hasError('required',['pass2'])">{{myForm.getError('passValidator',['password'])?.info}}</p>
+                            <input type="text" placeholder="请输入邮箱" class="form-control" id="email" formControlName="email" />
+                            <div [hidden]="myForm.get('email').valid || myForm.get('email').untouched" style="text-align:left;display:inline-block;margin-left:10px">
+                                <p [hidden]="!myForm.hasError('required',['email'])">邮箱是必填的</p>
+                                <p [hidden]="!myForm.hasError('email', ['email']) || myForm.hasError('required',['email'])">邮箱格式不对</p>
                             </div>
                         </div>
                     </div>
-                </ng-container>
-                <div class="ui-g-12">
-                    <div class="ui-g-4" style="text-align: right;">
-                        <label for="mobile">手机号码:</label>
+                    <div class="ui-g-12">
+                        <input type="submit" value="提交" class="btn btn-warning" [disabled]="!myForm.valid" />
                     </div>
-                    <div class="ui-g-8" style="text-align: left;">
-                        <input type="text" placeholder="请输入手机号码" class="form-control" id="mobile" formControlName="mobile" />
-                        <div [hidden]="myForm.get('mobile').valid || myForm.get('mobile').untouched" style="text-align:left;display:inline-block;margin-left:10px">
-                            <p [hidden]="!myForm.hasError('required',['mobile'])">手机是必填的</p>
-                            <p [hidden]="!myForm.hasError('mobileValidator', ['mobile']) || myForm.hasError('required',['mobile'])">{{myForm.getError('mobileValidator', ['mobile'])?.info}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-g-12">
-                    <div class="ui-g-4" style="text-align: right;">
-                        <label for="email">邮箱:</label>
-                    </div>
-                    <div class="ui-g-8" style="text-align: left;">
-                        <input type="text" placeholder="请输入邮箱" class="form-control" id="email" formControlName="email" />
-                        <div [hidden]="myForm.get('email').valid || myForm.get('email').untouched" style="text-align:left;display:inline-block;margin-left:10px">
-                            <p [hidden]="!myForm.hasError('required',['email'])">邮箱是必填的</p>
-                            <p [hidden]="!myForm.hasError('email', ['email']) || myForm.hasError('required',['email'])">邮箱格式不对</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui-g-12">
-                    <input type="submit" value="提交" class="btn btn-warning" [disabled]="!myForm.valid" />
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-        <div class="ui-g-2"></div>
-    </div>
-    <div class="ui-g-12">
-        发送的值：{{ str }}
-    </div>
+        <div class="ui-g-12">
+            发送的值：{{ str }}
+        </div>
 
 
-    <div class="ui-g-12">
-        用法：<a href="http://vosung.bgenius.cn/framework-group/frontend-components/frontend-component-list/tree/master/src/app/pages/components/validator">ts & html</a> 验证包：
-        <a href="http://vosung.bgenius.cn/framework-group/frontend-components/frontend-component-list/blob/master/src/app/pages/components/validator/validatorLib.ts">演示几个常见的</a> 参考博文：
-        <a href="https://blog.csdn.net/xiagh/article/details/78360845?locationNum=10&fps=1">地址</a>
-    </div>
-</div>   
+        <div class="ui-g-12">
+            用法：<a href="http://vosung.bgenius.cn/framework-group/frontend-components/frontend-component-list/tree/master/src/app/pages/components/validator">ts & html</a> 验证包：
+            <a href="http://vosung.bgenius.cn/framework-group/frontend-components/frontend-component-list/blob/master/src/app/pages/components/validator/validatorLib.ts">演示几个常见的</a> 参考博文：
+            <a href="https://blog.csdn.net/xiagh/article/details/78360845?locationNum=10&fps=1">地址</a>
+        </div>
+    </div> -->
+    <!-- <hr> -->
+    <h3>录入验证</h3>
+    <br>
+    <h5>使用说明：</h5>
+    <p-card>
+        {{dec1}} <br>
+        {{dec2}} <br>
+        {{dec3}} <br>
+        {{dec4}} 
+    </p-card>
+    <br>
+    <p-card>
+        <p style="margin-bottom:5px;">1. 日期（例如：2018-06-11）</p>
+        <input type="text" onlyDate pInputText [(ngModel)]="test.onlyDate">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyDate}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyDateCode}}
+            </code>
+        </p>
+    </p-card>
+    <br>
+    <p-card>
+        <p style="margin-bottom:5px;">2. 日期时间（例如：2018-06-11 24:00:00）</p>
+        <input type="text" onlyDateTime pInputText [(ngModel)]="test.onlyDateTime">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyDateTime}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyDateTimeCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">3. 邮箱地址(例如：323498@qq.com)</p>
+        <input type="text" onlyEmail pInputText [(ngModel)]="test.onlyEmail">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyEmail}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyEmailCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">4.整数(例如：123,456,333,-20,+30,只包括数字，+-符号)</p>
+        <input type="text" onlyInt pInputText [(ngModel)]="test.onlyInt">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyInt}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyIntCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">5. 浮点数(例如：1.22,0.01,-9.11,+20.22，只包括浮点数数字外加.+-三个符号)</p>
+        <input type="text" onlyFloat pInputText [(ngModel)]="test.onlyFloat">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyFloat}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyFloatCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">6. 数字（例如：1,2,3,-4.50,+0.55，只包括数字，浮点数，外加.+-）</p>
+        <input type="text" onlyNumber pInputText [(ngModel)]="test.onlyNumber">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyNumber}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyNumberCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">7. 中文（只包括中文，不包括数字，英文，符号）</p>
+        <input type="text" onlyCh pInputText [(ngModel)]="test.onlyCh">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyCh}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyChCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">8. 英文（只包括英文和英文括号，不包括数字，符号）</p>
+        <input type="text" onlyEn pInputText [(ngModel)]="test.onlyEn">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyEn}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyEnCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">9. 英文加数字（只包括英文和数字，不包括符号）</p>
+        <input type="text" onlyEnNum pInputText [(ngModel)]="test.onlyEnNum">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyEnNum}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyEnNumCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">10. 英文数字符号（只包括英文，数字，符号，不包括中文，中文的标点符号）</p>
+        <input type="text" onlyEnNumSign pInputText [(ngModel)]="test.onlyEnNumSign">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyEnNumSign}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyEnNumSignCode}}
+            </code>
+        </p>
+    </p-card>
+    <p-card>
+        <p style="margin-bottom:5px;">11. 货币（只包括货币格式的数字，逗号，小数点, ,不包括其他内容）</p>
+        <input type="text" onlyMoney pInputText [(ngModel)]="test.onlyMoney">
+        <br>
+        <p style="margin:5px 0;">演示：{{test?.onlyMoney}}</p>
+        <p style="margin:5px 0;">
+            <code>
+                代码：
+                {{test?.onlyMoneyCode}}
+            </code>
+        </p>
+    </p-card>
+</div>

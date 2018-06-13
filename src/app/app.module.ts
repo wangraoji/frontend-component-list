@@ -6,9 +6,12 @@ import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { PagesComponent } from './pages/pages.component';
 
+// import { collection } from './pages/validation';
+
 @NgModule({
   declarations: [
     AppComponent,
+    // ...collection,
     // PagesComponent,
   ],
   imports: [

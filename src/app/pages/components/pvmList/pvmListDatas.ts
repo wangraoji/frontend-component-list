@@ -11,6 +11,18 @@ export const list1Data = {
     ],
 }
 
+export const list2Data = {
+    event: [
+        
+        { eventName: "nodeClick", returns: "当前点击的treenode数据", dec: "选中treenode触发", func: "(nodeClick)='你的方法名'" },
+        { eventName: "onRowSelect", returns: "当前选中行的数据", dec: "单行选中触发", func: "(onRowSelect)='你的方法名'" },
+        { eventName: "onRowUnselect", returns: "当前取消选中行的数据", dec: "取消选中行触发", func: "(onRowUnselect)='你的方法名'" },
+    ],
+    cont: [
+        { contName: "header", contDec: "给列表头部添内容", contfunc: "&lt;header&gt;<br>...(这里你可以添你任何想要添的东西)<br>&lt;header&gt;" },
+    ],
+}
+
 export const edit1Data = {
     event: [
         { eventName: "onSave", returns: "当前整个数据", dec: "点工具栏保存", func: "(onSave)='你的方法名'" },
@@ -20,7 +32,7 @@ export const edit1Data = {
 export const edit2Data = {
     event: [
         { eventName: "onRowSelect", returns: "当前选中行的数据,和所有数据", dec: "单行选中触发", func: "(onRowSelect)='你的方法名'" },
-        { eventName: "onRowUnselect", returns: "当前取消航的数据，和所有数据", dec: "取消选中行触发", func: "(onRowUnselect)='你的方法名'" },
+        { eventName: "onRowUnselect", returns: "当前取消行的数据，和所有数据", dec: "取消选中行触发", func: "(onRowUnselect)='你的方法名'" },
     ],
     cont: [
         { contName: "header", contDec: "给列表头部添内容", contfunc: "&lt;header&gt;<br>...(这里你可以添你任何想要添的东西)<br>&lt;header&gt;" },

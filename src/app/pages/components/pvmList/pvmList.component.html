@@ -49,6 +49,49 @@
 
     <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
         <p-header>
+            列表模板1 --> list2
+        </p-header>
+        <p>事件：</p>
+        <p-table [value]="list2Data.event">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>事件名</th>
+                    <th>返回值</th>
+                    <th>描述</th>
+                    <th>使用方法</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-list2>
+                <tr>
+                    <td>{{list2.eventName}}</td>
+                    <td>{{list2.returns}}</td>
+                    <td>{{list2.dec}}</td>
+                    <td>{{list2.func}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <br>
+        <p>内容：</p>
+        <p-table [value]="list2Data.cont">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>内容标签</th>
+                    <th>描述</th>
+                    <th>使用方法</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-list2>
+                <tr>
+                    <td>{{list2.contName}}</td>
+                    <td>{{list2.contDec}}</td>
+                    <td [innerHTML]="list2.contfunc"></td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-panel>
+
+    <p-panel [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+        <p-header>
             编辑模板1 --> edit1
         </p-header>
         <p>事件：</p>

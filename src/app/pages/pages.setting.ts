@@ -118,6 +118,7 @@ import { TableModule } from 'primeng/table';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
 export const primengModules = [
     // --> Card
     CardModule,
@@ -135,4 +136,6 @@ export const primengModules = [
     PanelModule,
     // --> 弹出框
     DialogModule,
+    // --> 录入框
+    InputTextModule,
 ];
