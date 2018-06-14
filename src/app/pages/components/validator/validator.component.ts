@@ -7,10 +7,9 @@ import { mobileValidator, passValidator } from './validatorLib';
     styleUrls: ['./validator.component.scss']
 })
 export class ValidatorComponent {
-    dec1:string = `由于目前没有发布到NPM，只能把整个 validation 文件 copy 到你所需的项目里。`
-    dec2:string = `然后在你需要用的 module 里使用如下命令：`;
-    dec3:string = `import { collection } from './(你的路径)validation'`;
-    dec4:string = `然后把 collection 加入到你 module 里的 declarations。 如：declarations: [...collection]。`;
+    dec1:string = `1. npm install --save @jinscop/validation`
+    dec2:string = `2. import { collection } from '@jinscop/validation';`;
+    dec3:string = `3. 把 collection 加入到你 module 里的 declarations。 如：declarations: [...collection]。`;
 
     test: any = {};
     public myForm: FormGroup;
