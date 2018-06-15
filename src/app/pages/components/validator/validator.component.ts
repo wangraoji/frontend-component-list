@@ -7,8 +7,8 @@ import { mobileValidator, passValidator } from './validatorLib';
     styleUrls: ['./validator.component.scss']
 })
 export class ValidatorComponent {
-    dec1:string = `1. npm install --save @jinscop/validation`
-    dec2:string = `2. import { collection } from '@jinscop/validation';`;
+    dec1:string = `1. npm install --save @jinscop/ngx-validation`
+    dec2:string = `2. import { collection } from '@jinscop/ngx-validation';`;
     dec3:string = `3. 把 collection 加入到你 module 里的 declarations。 如：declarations: [...collection]。`;
 
     test: any = {};
