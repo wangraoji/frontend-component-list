@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { mobileValidator, passValidator } from './validatorLib';
 @Component({
     selector: 'validator',
-    templateUrl: './validator.component.html',
+    templateUrl: './validator.component.html', 
     styleUrls: ['./validator.component.scss']
 })
 export class ValidatorComponent {
