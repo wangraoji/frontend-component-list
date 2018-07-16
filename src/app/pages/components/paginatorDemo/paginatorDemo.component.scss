@@ -1,0 +1,29 @@
+h3 {
+    margin-bottom: 5px;
+}
+
+.code {
+    overflow: auto;
+    /* width: 100%; */
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    height: 80px;
+    p {
+        padding: 0 10px;
+        line-height: 50px;
+        width: 1500px;
+        font-size: 14px;
+    }
+}
+
+.b {
+    color: #c92c2c;
+}
+
+.s {
+    color: #2f9c0a;
+}
+
+.v {
+    color: #1990b8;
+}

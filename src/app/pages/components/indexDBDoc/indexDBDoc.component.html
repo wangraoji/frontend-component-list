@@ -1,0 +1,57 @@
+<div class="content-section introduction">
+    <div>
+        <p>
+            indexDBDoc works!
+        </p>
+    </div>
+</div>
+<div class="content-section implementation">
+
+    <p-table [value]="studentData" selectionMode="single" [(selection)]="selectedStudent">
+        <ng-template pTemplate="caption">
+            <button pButton type="button" label="新增" (click)="addDialog()" class="lt mg"></button>
+            <button pButton type="button" label="删除" (click)="deleteDb()" class="lt mg"></button>
+            <button pButton type="button" label="修改" (click)="editDb()" class="lt mg"></button>
+            <div class="ui-inputgroup" class="lt mg">
+                <input type="text" pInputText placeholder="search" [(ngModel)]="serchValue">
+                <button pButton type="button" icon="fa fa-search" class="ui-button-secondary" (click)="searchDb()"></button>
+            </div>
+            <br clear="both">
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>like</th>
+                <th>dep</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-stu>
+            <tr [pSelectableRow]="stu" >
+                <td>{{stu.name}}</td>
+                <td>{{stu.age}}</td>
+                <td>{{stu.like}}</td>
+                <td>{{stu.dep}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-dialog [header]="dialogData.title" [(visible)]="dialogData.display" [modal]="true" [responsive]="true" [baseZIndex]="10000" [width]="300" (onShow)="onShow()">
+    <div class="ui-g">
+        <div class="ui-g-3">姓名</div>
+        <div class="ui-g-9"><input type="text" pInputText size="15" [(ngModel)]="student.name" #oneInput/></div>
+        <div class="ui-g-3">age</div>
+        <div class="ui-g-9"><input type="text" pInputText size="15" [(ngModel)]="student.age" /></div>
+        <div class="ui-g-3">like</div>
+        <div class="ui-g-9"><input type="text" pInputText size="15" [(ngModel)]="student.like" /></div>
+        <div class="ui-g-3">dep</div>
+        <div class="ui-g-9"><input type="text" pInputText size="15" [(ngModel)]="student.dep" /></div>
+    </div>
+    <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="onSave()" label="保存"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="onClose()" label="取消"></button>
+    </p-footer>
+</p-dialog>
+
+

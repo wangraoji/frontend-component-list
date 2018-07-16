@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 // import { PagesComponent } from './pages/pages.component';
 
 // import { collection } from './pages/validation';
-
+// import {TestModule} from 'wangrj-hs-text-lib';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    // TestModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

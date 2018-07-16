@@ -1,0 +1,34 @@
+<div class="content-section introduction">
+    <h1>
+        technologyInfo 技术情报
+    </h1>
+</div>
+<div class="content-section implementation">
+    <p-table [value]="data">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>框架名称</th>
+                <th>网址</th>
+                <th>用到的第三方框架</th>
+                <th>优点</th>
+                <th>缺点</th>
+                <th>维护方</th>
+                <th>维护官网</th>
+                <th>是否开源</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data>
+            <tr [pSelectableRow]="data">
+                <td>{{data.name}}</td>
+                <td class="sl"><a [href]="data.link" target="_blank" [title]="data.link">{{data.link}}</a></td>
+                <td class="sl" [title]="data.thirdName">{{data.thirdName}}</td>
+                <td>{{data.merit}}</td>
+                <td>{{data.fault}}</td>
+                <td>{{data.maintain}}</td>
+                <td class="sl"><a [href]="data.maintainLink" target="_blank" [title]="data.maintainLink">{{data.maintainLink}}</a></td>
+                <td>{{data.openSource}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<!-- <a [href]="data.link" target="_blank">{{data.link}}</a> -->

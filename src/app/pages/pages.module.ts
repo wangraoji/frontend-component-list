@@ -6,7 +6,12 @@ import { routedComponents, primengModules } from './pages.setting';
 
 import { collection } from './validation';
 
+import { PaginatorComponent } from './paginator';
 
+// import {
+//     OnlyDateModule
+// } from '@jinscop/ngx-validation/OnlyDate';
+import {TestModule} from 'wangrj-hs-text-lib';
 @NgModule({
     imports: [
         CommonModule,
@@ -15,10 +20,13 @@ import { collection } from './validation';
         PagesRoutingModule,
         // --> primeng
         primengModules,
+        // OnlyDateModule,
+        TestModule,
     ],
     declarations: [
         ...routedComponents,
         ...collection,
+        PaginatorComponent,
     ],
 })
 export class PagesModule {

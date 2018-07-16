@@ -31,7 +31,6 @@ export class Pvma1Component {
     try {
       let jsonStr = JSON.parse(this.testCode);
       this.metaData.treeData = jsonStr.metaData.treeData;
-
       window.location.hash = '';
       window.location.hash = 'demo';
       return true;

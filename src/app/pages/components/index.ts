@@ -6,3 +6,8 @@ export * from './PVM_A1';
 export * from './validator';
 export * from './pvmc';
 export * from './pvmList';
+
+
+export * from './paginatorDemo';
+export * from './indexDBDoc';
+export * from './technologyInfo';

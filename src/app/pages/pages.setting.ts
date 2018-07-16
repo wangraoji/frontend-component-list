@@ -11,6 +11,8 @@ import {
     FirstTreeComponent,
     // --> 验证库
     ValidatorComponent,
+    // --> 分页组件
+    PaginatorDemoComponent,
     // --> 前端帮助库
     CommonDocComponent,
     WorkProcessComponent,
@@ -23,6 +25,10 @@ import {
     PvmcComponent,
     // --> pvmList 文档
     PvmListComponent,
+    // --> indexDB 文档
+    IndexDBDocComponent,
+    // --> TechnologyInfo 技术情报
+    TechnologyInfoComponent,
 } from './components';
 
 export const ROUTES = [{
@@ -49,6 +55,10 @@ export const ROUTES = [{
         {
             path: 'validator',
             component: ValidatorComponent,
+        },
+        {
+            path: 'paginator',
+            component: PaginatorDemoComponent,
         },
         {
             path: 'commonDoc',
@@ -81,7 +91,14 @@ export const ROUTES = [{
             path: 'pvmList',
             component: PvmListComponent,
         },
-
+        {
+            path: 'indexDB-Doc',
+            component: IndexDBDocComponent,
+        },
+        {
+            path: 'technologyInfo',
+            component: TechnologyInfoComponent,
+        },
     ],
 }];
 
@@ -95,6 +112,8 @@ export const routedComponents = [
     FirstTreeComponent,
     // --> 验证库
     ValidatorComponent,
+    // --> 分页组件
+    PaginatorDemoComponent,
     // --> 前端帮助库
     CommonDocComponent,
     WorkProcessComponent,
@@ -107,6 +126,10 @@ export const routedComponents = [
     PvmcComponent,
     // --> pvmList 文档
     PvmListComponent,
+    // --> indexDB 文档
+    IndexDBDocComponent,
+    // --> TechnologyInfo 技术情报
+    TechnologyInfoComponent,
 ];
 
 // ----------> primeng
