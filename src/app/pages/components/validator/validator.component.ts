@@ -7,8 +7,8 @@ import { mobileValidator, passValidator } from './validatorLib';
     styleUrls: ['./validator.component.scss']
 })
 export class ValidatorComponent {
-    dec1:string = `1. npm install --save @ngx-app-frame/domain`
-    dec2:string = `2. import { AFValidationModule } from '@ngx-app-frame/domain';`;
+    dec1:string = `1. npm install --save @ngx-app-frame/utils`
+    dec2:string = `2. import { AFValidationModule } from '@ngx-app-frame/utils';`;
     dec3:string = `3. 把 AFValidationModule 加入到你 module 里的 imports 如：imports: [AFValidationModule]。`;
 
     test: any = {};
