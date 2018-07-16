@@ -8,8 +8,8 @@ import { mobileValidator, passValidator } from './validatorLib';
 })
 export class ValidatorComponent {
     dec1:string = `1. npm install --save @ngx-app-frame/domain`
-    dec2:string = `2. import { AFPaginatorModule } from '@ngx-app-frame/domain';`;
-    dec3:string = `3. 把 AFPaginatorModule 加入到你 module 里的 imports 如：imports: [AFPaginatorModule]。`;
+    dec2:string = `2. import { AFValidationModule } from '@ngx-app-frame/domain';`;
+    dec3:string = `3. 把 AFValidationModule 加入到你 module 里的 imports 如：imports: [AFValidationModule]。`;
 
     test: any = {};
     public myForm: FormGroup;

@@ -11,7 +11,7 @@ import { PaginatorComponent } from './paginator';
 // import {
 //     OnlyDateModule
 // } from '@jinscop/ngx-validation/OnlyDate';
-import {TestModule} from 'wangrj-hs-text-lib';
+// import {TestModule} from 'wangrj-hs-text-lib';
 @NgModule({
     imports: [
         CommonModule,
@@ -21,7 +21,7 @@ import {TestModule} from 'wangrj-hs-text-lib';
         // --> primeng
         primengModules,
         // OnlyDateModule,
-        TestModule,
+        // TestModule,
     ],
     declarations: [
         ...routedComponents,
